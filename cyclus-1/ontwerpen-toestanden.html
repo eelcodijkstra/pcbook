@@ -1,0 +1,727 @@
+
+<!DOCTYPE html>
+
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Ontwerpen met behulp van toestandsdiagrammen &#8212; Physical Computing</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/assessment.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/assessment.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Voorbeelden" href="cyclus1-voorbeelden.html" />
+    <link rel="prev" title="Aanraaksensor" href="aanraaksensor.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="nl">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Physical Computing</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welkom bij Physical Computing (micro:bit Python)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Inleiding
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../inleiding/inleiding-physical-computing.html">
+   Inleiding Physical Computing
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../inleiding/waar-te-vinden.html">
+     Waar vind je Physical Computing?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../inleiding/zintuigen-en-sensoren.html">
+     Zintuigen en sensoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../inleiding/onderdelen-physical-computing.html">
+     Onderdelen physical computing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../inleiding/toepassingen-dhz.html">
+     Toepassingen die je zelf kunt maken
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../inleiding/over-deze-module.html">
+     Over deze module
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Inleiding microbit
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../microbit-inleiding/inleiding-microbit.html">
+   Inleiding micro:bit
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../microbit-inleiding/microbit-sensoren.html">
+     Sensoren micro:bit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../microbit-inleiding/microbit-eerste-programma-python.html">
+     Je eerste Python programma voor de Micro:bit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../microbit-inleiding/microbit-volgende-stappen.html">
+     Volgende stappen met de microbit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../microbit-inleiding/microbit-rest.html">
+     De rest van dit hoofdstuk
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Cyclus 1
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="inleiding.html">
+   Inleiding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="domotica.html">
+   Domotica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="aanraaksensor.html">
+   Aanraaksensor
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Ontwerpen met behulp van toestandsdiagrammen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cyclus1-voorbeelden.html">
+   Voorbeelden
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="correcte-diagrammen.html">
+   Correcte toestandsdiagrammen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="eindopdracht-1.html">
+   Eindopdracht cyclus 1: hotelschakeling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="van-diagram-naar-programma.html">
+   Van toestandsdiagram naar programma
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="oefenopdrachten.html">
+   Oefenopdrachten
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="opdracht-toegangscode.html">
+     Opdracht: toegangscode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="opdracht-toggle.html">
+     Oefenopdracht: toggle-functie van een drukknop
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="opdracht-tv.html">
+     Oefenopdracht: TV met 2 afstandsbedieningen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Cyclus 1 - microbit
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../cyclus-1-mbp/inleiding.html">
+   Inleiding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../cyclus-1-mbp/tamagotchi.html">
+   Extra opdracht: Tamagotchi
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notities
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notities/inleiding.html">
+   Bij de inleiding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notities/leerdoelen.html">
+   Leerdoelen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notities/omzetting.html">
+   Omzetting naar JB
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notities/python.html">
+   Python voor Physical Computing
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/keuzethemas/pcbook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/keuzethemas/pcbook/issues/new?title=Issue%20on%20page%20%2Fcyclus-1/ontwerpen-toestanden.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/cyclus-1/ontwerpen-toestanden.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inleiding">
+   Inleiding
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#toestanden">
+   Toestanden
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#frisdrankautomaat">
+   Frisdrankautomaat
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acties-in-een-toestandsdiagram">
+   Acties in een toestandsdiagram
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Ontwerpen met behulp van toestandsdiagrammen</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inleiding">
+   Inleiding
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#toestanden">
+   Toestanden
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#frisdrankautomaat">
+   Frisdrankautomaat
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acties-in-een-toestandsdiagram">
+   Acties in een toestandsdiagram
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="ontwerpen-met-behulp-van-toestandsdiagrammen">
+<h1>Ontwerpen met behulp van toestandsdiagrammen<a class="headerlink" href="#ontwerpen-met-behulp-van-toestandsdiagrammen" title="Permalink naar deze titel">#</a></h1>
+<section id="inleiding">
+<h2>Inleiding<a class="headerlink" href="#inleiding" title="Permalink naar deze titel">#</a></h2>
+<p>In deze module leer je te werken met toestandsdiagrammen. Als introductie daarop kun je met de gehele klas de volgende opdracht doen.</p>
+<div class="exercise admonition" id="cyclus-1/ontwerpen-toestanden-exercise-0">
+
+<p class="admonition-title"><span class="caption-number">Opdracht 5 </span> (Toestanden in games)</p>
+<section id="exercise-content">
+<p>Bekijk gezamenlijk het volgende fragment uit een game waarin de hoofdrolspeler een bewaker moet proberen uit te schakelen. Kijk goed naar de bewaker en beschrijf in welke toestanden de bewaker kan zijn. Beschrijf ook hoe de bewaker in elk van die toestanden terecht komt. Met andere woorden: wat moet er gebeuren voordat de bewaker in een bepaalde toestand terecht komt.</p>
+</section>
+</div>
+<p><a class="reference external" href="https://youtu.be/it9t0whAyPg">https://youtu.be/it9t0whAyPg</a></p>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/it9t0whAyPg" title="Automaat bewaker" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Automaat bewaker</p>
+</section>
+<section id="toestanden">
+<h2>Toestanden<a class="headerlink" href="#toestanden" title="Permalink naar deze titel">#</a></h2>
+<p>Wellicht heb je de volgende toestanden gevonden, ook al noem je ze waarschijnlijk anders</p>
+<ol class="simple">
+<li><p>Waakzaam, rondkijkend</p></li>
+<li><p>Alert, klaar voor actie, rondkijkend</p></li>
+<li><p>Gealarmeerd, achter vijand aan lopend</p></li>
+<li><p>Verdwaasd, rondlopend</p></li>
+<li><p>Dood</p></li>
+</ol>
+<p>Op basis van deze toestanden kun je een toestandsdiagram maken, waarin duidelijk wordt hoe de bewaker van de ene toestand in de andere komt. De getallen geven de toestanden aan zoals hierboven staat beschreven.</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/toestandsdiagram-game.png"><img alt="../_images/toestandsdiagram-game.png" src="../_images/toestandsdiagram-game.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Toestandsdiagram bewaker</span><a class="headerlink" href="#id1" title="Permallink naar deze afbeelding">#</a></p>
+</figcaption>
+</figure>
+<p>Je kunt in het toestandsdiagram bijvoorbeeld zien dat als de bewaker in toestand 1 is en hij ziet een vijand, dan wordt de toestand van de bewaker 2.</p>
+<p>In de bovenstaande uitwerking zie je totaal 5 toestanden en 6 toestandsovergangen. Misschien zijn er wel meer hoor, alleen in dit korte fragment kun je ze niet allemaal zien.</p>
+<p>Het losse pijltje naar toestand 1 betekent dat dit de begintoestand is, oftewel de initiële toestand.</p>
+<div class="exercise admonition" id="cyclus-1/ontwerpen-toestanden-exercise-1">
+
+<p class="admonition-title"><span class="caption-number">Opdracht 6 </span> ((unplugged) Nooddienstregeling bij de spoorwegen)</p>
+<section id="exercise-content">
+<p>Je kunt ook als inleiding ook de unplugged activiteit doen die je via de onderstaande link vindt.</p>
+<p>href <a class="reference external" href="http://www.informaticaunplugged.nl/de-werkvormen/nooddienstregeling-bij-de-spoorwegen/">http://www.informaticaunplugged.nl/de-werkvormen/nooddienstregeling-bij-de-spoorwegen/</a></p>
+</section>
+</div>
+</section>
+<section id="frisdrankautomaat">
+<h2>Frisdrankautomaat<a class="headerlink" href="#frisdrankautomaat" title="Permalink naar deze titel">#</a></h2>
+<p>Hieronder zie je een voorbeeld van een onderdeel van een frisdrankautomaat. Dit onderdeel houdt bij hoeveel geld de gebruiker van de automaat heeft ingeworpen. Voor het gemak gaan we uit van slechts twee munten: 50 cent en 1 euro. En alle frisdranken in de automaat kosten 2 euro.</p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/toestandsdiagram-frisdrank.png"><img alt="../_images/toestandsdiagram-frisdrank.png" src="../_images/toestandsdiagram-frisdrank.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Toestandsdiagram frisdrankautomaat</span><a class="headerlink" href="#id2" title="Permallink naar deze afbeelding">#</a></p>
+</figcaption>
+</figure>
+<p>De bollen zijn toestanden. Dit toestandsdiagram kent dus vijf toestanden. De frisdrankautomaat begint in de starttoestand, dat is in dit geval de toestand ‘Start: 0 euro’. Bij elke toestand zie je enkele overgangen. Bijvoorbeeld de overgang van de starttoestand ‘0 euro’ naar ‘0,5 euro’. Die toestandsovergang vindt plaats als de gebruiker begint met het inwerpen van een muntstuk van 50 eurocent.<br />
+Je ziet dat een toestandsovergang ook naar dezelfde toestand kan gaan. Kijk maar bij de toestand ‘2 euro’. Na de toestandsovergang ‘Inworp 50 cent’ is de toestand nog steeds ‘2 euro’.</p>
+<p>Je kunt er zelf even mee oefenen. Klik op het plaatje hieronder om te activeren. Via de blauw en oranje knop kun je zogenaamd 50 cent of 1 euro inwerpen en dan zie je in welke toestand de automaat terecht komt.</p>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="../_images/toestandsdiagram-frisdrank.png"><img alt="../_images/toestandsdiagram-frisdrank.png" src="../_images/toestandsdiagram-frisdrank.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Toestandsdiagram frisdrankautomaat</span><a class="headerlink" href="#id3" title="Permallink naar deze afbeelding">#</a></p>
+</figcaption>
+</figure>
+<p>Een toestandsovergang wordt meestal uitgevoerd op basis van informatie uit één van de sensoren. Als iemand één euro in de frisdrankautomaat doet, wordt dat door één of meerdere sensoren gedetecteerd. Hoe dat precies werkt is hierbij niet belangrijk. Uit de toestandsdiagram kun je opmaken naar welke toestand de automaat moet gaan als iemand die euromunt inwerpt.</p>
+<div class="fillintheblank assessment admonition" id="assessment-2"><p class="admonition-title"><span class="caption-number">Vraag 10 </span><span> - Frisdrankautomaat</span></p>
+<section id="question">
+<p>Vul in. In welke toestand komt de automaat als iemand de volgende munten ingooit: 50 cent en nog eens 50 cent? Dat is toestand <input type="text" class="fitbanswer" id="fitb-answer-0-0" data-type="text" data-answer="1 euro" data-answer2=""></input>. In welke toestand komt de automaat als iemand de volgende munten ingooit: 50 cent, 1 euro, 1 euro? Dat is toestand <input type="text" class="fitbanswer" id="fitb-answer-0-1" data-type="text" data-answer="2 euro" data-answer2=""></input>.  Het is (wel of niet?) <input type="text" class="fitbanswer" id="fitb-answer-0-2" data-type="text" data-answer="niet" data-answer2=""></input> mogelijk dat de automaat van de toestand ‘2 euro’ nog in een andere toestand komt.</p>
+</section>
+<ul class="fitbfeedbacklist" hidden>
+<li data-value="a"><p>hints</p>
+</li><li data-value="b"><p>nog meer hints</p>
+</li></ul>
+<button class="fitbcheckbutton">Check</button>
+</div>
+</section>
+<section id="acties-in-een-toestandsdiagram">
+<h2>Acties in een toestandsdiagram<a class="headerlink" href="#acties-in-een-toestandsdiagram" title="Permalink naar deze titel">#</a></h2>
+<p>Het vorige toestandsdiagram is nog niet volledig, de gebruiker moet immers wel een frisdrank kunnen selecteren. In het volgende toestandsdiagram voegen we een overgang ‘selectie’ toe aan alle toestanden. ‘Selectie’ betekent dat de gebruiker een frisdrank kiest.</p>
+<figure class="align-default" id="id5">
+<a class="reference internal image-reference" href="../_images/toestandsdiagram-output.png"><img alt="../_images/toestandsdiagram-output.png" src="../_images/toestandsdiagram-output.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Toestandsdiagram frisdrankautomaat</span><a class="headerlink" href="#id5" title="Permallink naar deze afbeelding">#</a></p>
+</figcaption>
+</figure>
+<p>Aan een toestandsovergang kan een actie worden gekoppeld. Bij de frisdrankautomaat wordt de actie: ‘geef frisdrank’ uitgevoerd als de gebruiker een frisdrank selecteert en de toestand is: ‘2 euro’. Acties zijn altijd gekoppeld aan toestandsovergangen en niet aan toestanden. Een toestandsovergang mag één of meer acties hebben, maar dat hoeft niet. Voor het uitvoeren van acties worden vaak actuatoren gebruikt, zoals een lampje, display of motor.</p>
+<p>In deze module gebruiken we steeds een dubbele punt om het onderscheid te maken tussen toestandsovergang en actie: <code class="docutils literal notranslate"><span class="pre">&lt;toestandsovergang&gt;</span> <span class="pre">:</span> <span class="pre">&lt;actie&gt;</span></code></p>
+<div class="shortanswer assessment admonition" id="assessment-3"><p class="admonition-title"><span class="caption-number">Vraag 11 </span><span> - Werking frisdrankautomaat</span></p>
+<section id="question">
+<p>Beschrijf de werking van deze frisdrankautomaat in 2 of 3 zinnen.</p>
+</section>
+<textarea name="answer" rows="3" cols="40"></textarea><br><button class="sacheckbutton">Submit</button>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./cyclus-1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="aanraaksensor.html" title="vorige pagina">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">vorige</p>
+            <p class="prev-next-title">Aanraaksensor</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="cyclus1-voorbeelden.html" title="volgende pagina">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">volgende</p>
+        <p class="prev-next-title">Voorbeelden</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Themateam Physical Computing<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
