@@ -1,0 +1,70 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Inleiding
+    chapters:
+    - file: inleiding/inleiding-physical-computing
+      sections:
+      - file: inleiding/waar-te-vinden
+      - file: inleiding/zintuigen-en-sensoren
+      - file: inleiding/onderdelen-physical-computing
+      - file: inleiding/toepassingen-dhz
+      - file: inleiding/over-deze-module
+      
+  - caption: Inleiding microbit
+    chapters:
+    - file: microbit-inleiding/inleiding-microbit
+      sections:
+      - file: microbit-inleiding/microbit-sensoren
+      - file: microbit-inleiding/microbit-eerste-programma-python
+      - file: microbit-inleiding/microbit-volgende-stappen
+      - file: microbit-inleiding/microbit-rest  
+    
+  - caption: Cyclus 1
+    chapters:
+    - file: cyclus-1/inleiding    
+    - file: cyclus-1/domotica
+    - file: cyclus-1/aanraaksensor
+    - file: cyclus-1/ontwerpen-toestanden
+    - file: cyclus-1/cyclus1-voorbeelden
+    - file: cyclus-1/correcte-diagrammen
+    - file: cyclus-1/eindopdracht-1
+    - file: cyclus-1/van-diagram-naar-programma
+    - file: cyclus-1/oefenopdrachten
+      sections:
+      - file: cyclus-1/opdracht-toegangscode
+      - file: cyclus-1/opdracht-toggle
+      - file: cyclus-1/opdracht-tv
+      
+  - caption: Cyclus 1 - microbit
+    chapters:
+    - file: cyclus-1-mbp/inleiding
+    - file: cyclus-1-mbp/tamagotchi
+    
+  - caption: Notities
+    chapters:
+    - file: notities/inleiding
+    - file: notities/leerdoelen
+    - file: notities/omzetting
+    - file: notities/python
+    
+#  - caption: Cyclus 2
+#    chapters:
+
+#  - caption: Cyclus 3
+#    chapters:
+
+    
+#  - caption: Cyclus 4
+#    chapters:
+
+    
+#  - caption: Concepten
+#    chapters:
+
+    
+#  - caption: Referentie
+#    chapters:
