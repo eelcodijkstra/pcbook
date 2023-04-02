@@ -38,7 +38,7 @@ sphinx:
 #  local_extensions:
 #    sphinx_progress: ./ext/sphinx-progress
   config:
-    language: nl  
+    language: nl
     numfig_format:
       exercise: "Opdracht %s"
       assessment: "Vraag %s"

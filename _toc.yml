@@ -44,19 +44,46 @@ parts:
     - file: cyclus-1-mbp/inleiding
     - file: cyclus-1-mbp/tamagotchi
     
-  - caption: Notities
-    chapters:
-    - file: notities/inleiding
-    - file: notities/leerdoelen
-    - file: notities/omzetting
-    - file: notities/python
+
     
-#  - caption: Cyclus 2
-#    chapters:
+  - caption: Cyclus 2
+    chapters:
+    - file: cyclus-2/inleiding
+    - file: cyclus-2/smart-cities
+    - file: cyclus-2/bewegingssensor
+    - file: cyclus-2/timers-inleiding
+    - file: cyclus-2/datasheets
+      sections:
+      - file: cyclus-2/timers-toestandsdiagram
+      - file: cyclus-2/timers-oefenopdracht-lampje
+      - file: cyclus-2/timers-programmeren
+      - file: cyclus-2/timers-oefenopdracht-tamagotchi
+      - file: cyclus-2/timers-oefenopdracht-dodemansknop
+      
+  - caption: Cyclus 2 - microbit
+    chapters:
+    - file: cyclus-2-mbp/inleiding
+    - file: cyclus-2-mbp/timers
+    - file: cyclus-2-mbp/timers-knipperend-lampje
+    - file: cyclus-2-mbp/event-handlers
+    - file: cyclus-2-mbp/opdracht1-samenwerking
+    - file: cyclus-2-mbp/opdracht1-inleiding
+    - file: cyclus-2-mbp/opdracht1-stap1
+    - file: cyclus-2-mbp/opdracht1-stap2
 
-#  - caption: Cyclus 3
-#    chapters:
-
+  - caption: Cyclus 3
+    chapters:
+    - file: cyclus-3/inleiding
+    - file: cyclus-3/embedded-en-real-time
+    - file: cyclus-3/kwaliteit-van-systemen
+    - file: cyclus-3/ultrasone-afstandssensor
+    - file: cyclus-3/parkeersensor-bouwen
+    - file: cyclus-3/viaductbeveiliging
+    
+  - caption: Cyclus 3 - microbit
+    chapters:
+    - file: cyclus-3-mbp/parkeersensor-bouwen
+    - file: cyclus-3-mbp/viaductbeveiliging
     
 #  - caption: Cyclus 4
 #    chapters:
@@ -68,3 +95,10 @@ parts:
     
 #  - caption: Referentie
 #    chapters:
+
+  - caption: Notities
+    chapters:
+    - file: notities/inleiding
+    - file: notities/leerdoelen
+    - file: notities/omzetting
+    - file: notities/python
