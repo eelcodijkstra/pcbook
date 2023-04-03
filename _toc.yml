@@ -85,9 +85,13 @@ parts:
     - file: cyclus-3-mbp/parkeersensor-bouwen
     - file: cyclus-3-mbp/viaductbeveiliging
     
-#  - caption: Cyclus 4
-#    chapters:
-
+  - caption: Cyclus 4
+    chapters:
+    - file: cyclus-4/inleiding
+    - file: cyclus-4/stappentellers
+    - file: cyclus-4/versnellingssensor
+    - file: cyclus-4/grillige-data
+    - file: cyclus-4-mbp/stappenteller-bouwen
     
 #  - caption: Concepten
 #    chapters:
