@@ -1,4 +1,4 @@
-# Parkeersensor bouwen
+# Parkeersensor bouwen (MB)
 
 Nu wordt het tijd om de ultrasoonsensor aan te sluiten op de Micro:bit en de parkeersensor te bouwen. In dit hoofdstuk geven we aanwijzingen voor het aansluiten van de ultrasoonsensor.
 

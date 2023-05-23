@@ -10,4 +10,5 @@ Daarbij gaat het om:
     * bijvoorbeeld: het gebruik van libraries; welke constructies komen daarbij aan de orde?
 * wat je moet kunnen maken
     * ook: standaard-patronen, bijvoorbeeld voor de "while True", voor het detecteren van events, voor event-handlers, voor eindige automaten (toestanden en toestandsovergangen)
+    * standaard-patroon: timers (komt ook in het materiaal aan de orde, maar heeft in microPython (en in Python?) een specifieke implementatie!
     

@@ -48,13 +48,13 @@ Een voorbeeld:
 
 Je start de timer bij de looptijd van 12.000 milliseconden (dat is 12 seconden). De timerEindtijd wordt dan 12.000 + 5.000 = 17.000 milliseconden. Bij een looptijd van 12.500 milliseconden gaat de timer niet af, want de volgende uitdrukking is dan *NIET WAAR*:
 
-```
+```Python
     17000 - 12500 <= 0
 ```
 
 Een paar seconden later is de looptijd bijvoorbeeld 17.400 milliseconden. De timer loopt dan wel af, want de volgende uitdrukking is dan *WAAR*:
 
-```
+```Python
     17000 - 17400 <= 0
 ```
  

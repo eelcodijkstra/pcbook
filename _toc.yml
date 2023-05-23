@@ -21,7 +21,10 @@ parts:
       - file: microbit-inleiding/microbit-sensoren
       - file: microbit-inleiding/microbit-eerste-programma-python
       - file: microbit-inleiding/microbit-volgende-stappen
-      - file: microbit-inleiding/microbit-rest  
+      - file: microbit-inleiding/microbit-rest
+    - file: microbit-inleiding/microbit-inventors-kit
+    - file: microbit-inleiding/microbit-aansluiten-led
+    - file: microbit-inleiding/microbit-led-regeling
     
   - caption: Cyclus 1
     chapters:
@@ -78,11 +81,8 @@ parts:
     - file: cyclus-3/kwaliteit-van-systemen
     - file: cyclus-3/ultrasone-afstandssensor
     - file: cyclus-3/parkeersensor-bouwen
-    - file: cyclus-3/viaductbeveiliging
-    
-  - caption: Cyclus 3 - microbit
-    chapters:
     - file: cyclus-3-mbp/parkeersensor-bouwen
+    - file: cyclus-3/viaductbeveiliging
     - file: cyclus-3-mbp/viaductbeveiliging
     
   - caption: Cyclus 4
