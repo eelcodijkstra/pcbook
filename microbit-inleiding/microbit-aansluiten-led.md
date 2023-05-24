@@ -1,4 +1,4 @@
-# Aansluiten LED en drukknop
+# Voorbeeld: aansluiten LED en drukknop
 
 ## Inleiding
 

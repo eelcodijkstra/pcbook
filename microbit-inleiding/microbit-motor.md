@@ -1,4 +1,6 @@
-# Inleiding
+# Voorbeeld: aansluiten motor
+
+## Inleiding
 
 In deze paragraaf leer je hoe je een motor kunt aansluiten op de Mico:bit. Dit is gebaseerd op: https://www.kitronik.co.uk/blog/experiment-4-using-a-transistor-to-drive-a-motor/.
 
@@ -18,7 +20,7 @@ Je leert hierbij dat je een motor niet zomaar op een pin kunt aansluiten, omdat 
 Zorg dat je stapsgewijs werkt:
 
 * Stap 1: sluit de motor aan en test of deze werkt.
-* Stap 2: maak een toestandsdiagram(???)
+* Stap 2: maak de functietabel
 * Stap 3: maak het programma en test dit
 
 ## Stap 1: Sluit de motor aan
@@ -54,10 +56,10 @@ De micro:bit V2 kan via de 3V aansluiting ongeveer 190 mA leveren (van de 300mA 
 zie ook: [verschillen microbit V1 en v2](https://www.sossolutions.nl/blog/het-verschil-tussen-de-bbc-micro-bit-v1-en-bbc-micro-bit-v2/)
 :::
     
-## Stap 2: functie-tabel
+## Stap 2: functietabel
 
 De besturing van de motor met de knoppen werkt *direct* (ofwel: *functioneel*): er is geen sprake van toestanden.
-Alleen zolang de knoppen ingedrukt zijn, draait de motor. (Anders gezegd: je gebruik het *signaal* van de knoppen voor de aansturing van de motor.) Voor deze besturing maken we de volgende tabel:
+Alleen zolang de knoppen ingedrukt zijn, draait de motor. (Anders gezegd: je gebruik het *signaal* van de knoppen voor de aansturing van de motor.) Voor deze besturingsfunctie maken we de volgende tabel:
     
 | knop(pen)  | motor |
 | :---       | :---  |
@@ -86,7 +88,7 @@ while True:
 
 Test je schakeling en programma. *Werkt dit?*
 
-**Opmerking.** We kiezen er hier voor om de tabel direct te vertalen in het programma, zonder "optimalisaties". Dit betekent dat we de functies vaker aanroepen dan strikt nodig: als je geneste if-statements gebruikt kun je met minder aanroepen volstaan. Probeer zelf een dergelijke variant van het programma te maken.
+**Opmerking.** We kiezen er hier voor om de tabel zo direct mogelijk te vertalen in het programma, zonder "optimalisaties". Dit betekent dat we de functies vaker aanroepen dan strikt nodig: als je geneste if-statements gebruikt kun je met minder aanroepen volstaan. Probeer zelf een dergelijke variant van het programma te maken.
 
 :::{admonition} Testen van je *sketch*
 Met een *sketch* bedoelen we (in Arduino-termen) de combinatie van hardware en software. Als het niet werkt, kan het probleem op drie plekken zitten:

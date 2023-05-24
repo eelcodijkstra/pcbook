@@ -27,6 +27,10 @@ parts:
     - file: microbit-inleiding/microbit-led-regeling
     - file: microbit-inleiding/microbit-buzzer
     - file: microbit-inleiding/microbit-motor
+    - file: microbit-inleiding/microbit-alarm
+    - file: microbit-inleiding/microbit-batterij
+    - file: microbit-inleiding/microbit-debugging
+    - file: microbit-inleiding/microbit-meer-voorbeelden
     
   - caption: Cyclus 1
     chapters:
