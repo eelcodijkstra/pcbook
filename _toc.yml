@@ -25,6 +25,8 @@ parts:
     - file: microbit-inleiding/microbit-inventors-kit
     - file: microbit-inleiding/microbit-aansluiten-led
     - file: microbit-inleiding/microbit-led-regeling
+    - file: microbit-inleiding/microbit-buzzer
+    - file: microbit-inleiding/microbit-motor
     
   - caption: Cyclus 1
     chapters:

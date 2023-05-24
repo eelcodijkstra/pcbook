@@ -28,11 +28,20 @@ Breadboard met LED-schakeling
 Test of de LED werkt, bijvoorbeeld met onderstaande programma. Dit programma laat de LED steeds met een andere sterkte branden. Daarbij is 1023 de maximale waarde.
 
 ```Python
+from microbit import *
+
+while True:
+    pin1.write_analog(512)
+    sleep(500)
+    pin1.write_analog(1023)
+    sleep(500)
+    pin1.write_analog(0)
+    sleep(500)
 
 ```
 
 :::{warning}
-Let op: we gebruiken hier ‘pauzeer’ puur voor het testen. In de module leer je hoe je hiervoor een timer kunt gebruiken, zie cyclus 2 - timers.
+Let op: we gebruiken hier `sleep()` puur voor het testen. In de module leer je hoe je hiervoor een timer kunt gebruiken, zie cyclus 2 - timers.
 :::
 
 ## Over PWM: Pulse With Modulation
@@ -50,20 +59,16 @@ Pulsbreedtemodulatie (PWM) - Bron: [Wikipedia](https://nl.wikipedia.org/wiki/Pul
 
 :::
 
-Je hoeft maar weinig te doen om PWM te gebruiken. Je gebruikt ‘schrijf analoog pin … naar …’ en de Micro:bit handelt het verder af. Als je de led op 50% gebruik je bijvoorbeeld het onderstaande blokje. De waarde is 512, omdat dat de helft is van 1023, wat het maximum is.
-
-```Python
-
-```
+Je hoeft maar weinig te doen om PWM te gebruiken. Je gebruikt `pin1.write_analog(x)` en de micro:bit handelt het verder af. Als je de LED op 50% wilt laten branden gebruik je `pin1.write_analog(512)`. De waarde is 512, omdat dat de helft is van 1023, wat het maximum is.
 
 ## Stap 2 Maken van een toestandsdiagram
 
 We maken een programma met 4 toestanden.
 
-* Toestand 1: de led is uit
-* Toestand 2: de led is aan op 33% sterkte
-* Toestand 3: de led is aan op 66% sterkte
-* Toestand 4: de led is aan op 100% sterkte
+* Toestand 0: de led is uit
+* Toestand 1: de led is aan op 33% sterkte
+* Toestand 2: de led is aan op 66% sterkte
+* Toestand 3: de led is aan op 100% sterkte
 
 Het toestandsdiagram ziet er dan zo uit:
 
@@ -76,21 +81,48 @@ Toestandsdiagram voor LED sterkteregeling
 
 ## Stap 3 Omzetten naar een programma
 
-Dit was de bedoeling van ons systeem: als de A-knop op de micro:bit wordt ingedrukt gaat de LED feller branden. Als de B-knop wordt ingedrukt gaat de LED minder fel branden.
+Dit was de bedoeling van ons systeem: als knop A op de micro:bit wordt ingedrukt gaat de LED feller branden. Als knop B wordt ingedrukt gaat de LED minder fel branden.
 
-Als je met de micro:bit wilt nagaan of een knopje is gedrukt en weer losgelaten kun je het volgende commando gebruiken:
-
-```Python
-
-```
-
-
-Daarom hebben het programma als volgt opgebouwd:
+Als je met de micro:bit wilt nagaan of knop A is gedrukt en weer losgelaten ("pressed" event) gebruik je de volgende opdracht:
 
 ```Python
-
+button_a.was_pressed()
 ```
 
+Daarmee hebben het programma als volgt opgebouwd:
 
+```Python
+from mictobit import *
+
+led_state = 0
+led = pin1
+
+while True:
+    if button_a.was_pressed():
+        if led_state == 0:
+            led_state = 1
+            led.write_analog(341)
+        elif led_state == 1:
+            led_state = 2
+            led.write_analog(682)
+        elif led_state == 2:
+            led_state = 3
+            led.write_analog(1023)
+        else
+            pass # state remains 3
+
+    if button_b.was_pressed():
+        if led_state == 3:
+            led_state = 2
+            led.write_analog(682)
+        elif led_state == 2:
+            led_state = 1
+            led.write_analog(341)
+        elif led_state == 1:
+            led_state = 0
+            led.write_analog(0)
+        else
+            pass # state remains 0
+```
 
 Test het programma. *Werkt het?*
