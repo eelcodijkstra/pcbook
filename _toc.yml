@@ -50,11 +50,15 @@ parts:
       
   - caption: Cyclus 1 - microbit
     chapters:
-    - file: cyclus-1-mbp/inleiding
-    - file: cyclus-1-mbp/tamagotchi
-    
+    - file: cyclus-1-mbp/hotelschakeling
+    - file: cyclus-1-mbp/extra-opdrachten
+      sections:
+      - file: cyclus-1-mbp/toegangscode
+      - file: cyclus-1-mbp/lichtregulering
+      - file: cyclus-1-mbp/tamagotchi
+      - file: cyclus-1-mbp/valdetectie
 
-    
+
   - caption: Cyclus 2
     chapters:
     - file: cyclus-2/inleiding
@@ -99,8 +103,11 @@ parts:
     - file: cyclus-4/grillige-data
     - file: cyclus-4-mbp/stappenteller-bouwen
     
-#  - caption: Concepten
-#    chapters:
+  - caption: Concepten
+    chapters:
+    - file: concepten/input-output-systemen
+    - file: concepten/signalen-en-events
+    - file: concepten/toestandsdiagrammen
 
     
 #  - caption: Referentie
@@ -112,3 +119,4 @@ parts:
     - file: notities/leerdoelen
     - file: notities/omzetting
     - file: notities/python
+    - file: notities/colofon

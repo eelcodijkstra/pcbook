@@ -4,6 +4,7 @@
 
 In dit deel vind je enkele voorbeelden, deels uitgewerkt, en deels zijn het opdrachten. Deze helpen om toestandsdiagrammen te begrijpen en te oefenen met het maken van toestandsdiagrammen. Kies zelf welke je interessant vindt.
 
+(lichtregulering)=
 ## Voorbeeld: lichtregulering
 
 In dit voorbeeld gaat het om een systeem waarmee je de intensiteit van een lamp kunt reguleren. Het systeem bestaat uit een lamp en twee knoppen.
@@ -190,6 +191,7 @@ Ons huisdier is in eerste instantie blij, dat is de begintoestand. Als hij wordt
 
 ::::
 
+(voorbeeld-valdetectie)=
 ## Voorbeeld: valdetectie
 
 Helaas komt het wel eens voor. Een oudere man of vrouw, alleen thuis, valt van de trap, breekt iets en kan niet meer opstaan of bewegen. De man of vrouw moet blijven liggen en hopen dat er iemand langskomt om te helpen.

@@ -1,3 +1,4 @@
+(toegangscode)=
 # Opdracht: toegangscode
 
 Het volgende toestandsdiagram beschrijft een systeem voor toegang tot een beveiligde omgeving. Het systeem bestaat uit twee drukknoppen, A en B. Om toegang te krijgen tot het systeem moet de gebruiker de knopjes indrukken in de juiste volgorde. Dan gaat de deur van het slot. Zodra iemand er doorheen loopt valt de deur automatisch weer in het slot
