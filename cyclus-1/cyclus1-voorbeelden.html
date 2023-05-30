@@ -1,0 +1,786 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="nl" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Voorbeelden &#8212; Physical Computing</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/assessment.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/assessment.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cyclus-1/cyclus1-voorbeelden';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Correcte toestandsdiagrammen" href="correcte-diagrammen.html" />
+    <link rel="prev" title="Ontwerpen met behulp van toestandsdiagrammen" href="ontwerpen-toestanden.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="nl"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welkom bij Physical Computing (micro:bit Python)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Inleiding</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../inleiding/inleiding-physical-computing.html">Inleiding Physical Computing</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../inleiding/waar-te-vinden.html">Waar vind je Physical Computing?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inleiding/zintuigen-en-sensoren.html">Zintuigen en sensoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inleiding/onderdelen-physical-computing.html">Onderdelen physical computing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inleiding/toepassingen-dhz.html">Toepassingen die je zelf kunt maken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inleiding/over-deze-module.html">Over deze module</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Inleiding microbit</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../microbit-inleiding/inleiding-microbit.html">Inleiding micro:bit</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../microbit-inleiding/microbit-sensoren.html">Sensoren micro:bit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../microbit-inleiding/microbit-eerste-programma-python.html">Je eerste Python programma voor de Micro:bit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../microbit-inleiding/microbit-volgende-stappen.html">Volgende stappen met de microbit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../microbit-inleiding/microbit-rest.html">De rest van dit hoofdstuk</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../microbit-inleiding/microbit-inventors-kit.html">Uitvinderskit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microbit-inleiding/microbit-aansluiten-led.html">Voorbeeld: aansluiten LED en drukknop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microbit-inleiding/microbit-led-regeling.html">Voorbeeld: sterkte van een LED aanpassen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microbit-inleiding/microbit-buzzer.html">Voorbeeld: aansluiten piezobuzzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microbit-inleiding/microbit-motor.html">Voorbeeld: aansluiten motor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microbit-inleiding/microbit-alarm.html">Voorbeeld: alarm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microbit-inleiding/microbit-batterij.html">Aansluiten op een batterij</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microbit-inleiding/microbit-debugging.html">Debuggen met een seriële verbinding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microbit-inleiding/microbit-meer-voorbeelden.html">Meer voorbeelden en handleidingen</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cyclus 1</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="inleiding.html">Inleiding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="domotica.html">Domotica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aanraaksensor.html">Aanraaksensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontwerpen-toestanden.html">Ontwerpen met behulp van toestandsdiagrammen</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Voorbeelden</a></li>
+<li class="toctree-l1"><a class="reference internal" href="correcte-diagrammen.html">Correcte toestandsdiagrammen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eindopdracht-1.html">Eindopdracht cyclus 1: hotelschakeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="van-diagram-naar-programma.html">Van toestandsdiagram naar programma</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="oefenopdrachten.html">Oefenopdrachten</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="opdracht-toegangscode.html">Opdracht: toegangscode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opdracht-toggle.html">Oefenopdracht: toggle-functie van een drukknop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opdracht-tv.html">Oefenopdracht: TV met 2 afstandsbedieningen</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cyclus 1 - microbit</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cyclus-1-mbp/hotelschakeling.html">Hotelschakeling</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cyclus-1-mbp/extra-opdrachten.html">Extra opdrachten</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cyclus-1-mbp/toegangscode.html">Toegangscode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cyclus-1-mbp/lichtregulering.html">Lichtregulering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cyclus-1-mbp/tamagotchi.html">Extra opdracht: Tamagotchi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cyclus-1-mbp/valdetectie.html">Valdetectie</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cyclus 2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cyclus-2/inleiding.html">Inleiding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cyclus-2/smart-cities.html">Smart cities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cyclus-2/bewegingssensor.html">Bewegingssensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cyclus-2/timers-inleiding.html">Timers</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cyclus-2/datasheets.html">Datasheets</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cyclus-2/timers-toestandsdiagram.html">Toestandsdiagram met timer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cyclus-2/timers-oefenopdracht-lampje.html">Oefenopdracht: knipperend lampje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cyclus-2/timers-programmeren.html">Programmeren van een timer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cyclus-2/timers-oefenopdracht-tamagotchi.html">Oefenopdracht: Tamagotchi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cyclus-2/timers-oefenopdracht-dodemansknop.html">Oefenopdracht: dodemansknop</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cyclus 2 - microbit</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cyclus-2-mbp/inleiding.html">Inleiding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cyclus-2-mbp/timers.html">Timers programmeren voor de micro:bit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cyclus-2-mbp/timers-knipperend-lampje.html">Voorbeeld: een knipperend lampje</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cyclus-2-mbp/event-handlers.html">Verdieping: events en event-handlers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cyclus-2-mbp/opdracht1-samenwerking.html">Samenwerkingsopdracht</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cyclus-2-mbp/opdracht1-inleiding.html">Inleiding in de opdracht</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cyclus-2-mbp/opdracht1-stap1.html">Stap 1: aansluiten en testen van de PIR-sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cyclus-2-mbp/opdracht1-stap2.html">Stap 2: programma maken met timer</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cyclus 3</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cyclus-3/inleiding.html">Cyclus 3: inleiding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cyclus-3/embedded-en-real-time.html">Embedded en real-time systemen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cyclus-3/kwaliteit-van-systemen.html">Kwaliteit van systemen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cyclus-3/ultrasone-afstandssensor.html">Ultrasone afstandssensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cyclus-3/parkeersensor-bouwen.html">Parkeersensor bouwen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cyclus-3-mbp/parkeersensor-bouwen.html">Parkeersensor bouwen (MB)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cyclus-3/viaductbeveiliging.html">Extra opdracht: viaductbeveiliging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cyclus-3-mbp/viaductbeveiliging.html">Extra opdracht: viaductbeveiliging (MB)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cyclus 4</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cyclus-4/inleiding.html">Inleiding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cyclus-4/stappentellers.html">Stappentellers en activity-trackers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cyclus-4/versnellingssensor.html">Versnellingssensor op je telefoon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cyclus-4/grillige-data.html">Grillige data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cyclus-4-mbp/stappenteller-bouwen.html">Stappenteller bouwen (MB)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Concepten</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../concepten/input-output-systemen.html">Input-output systemen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepten/signalen-en-events.html">Signalen en events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepten/toestandsdiagrammen.html">Toestandsdiagrammen</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notities</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notities/colofon.html">Colofon</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/keuzethemas/pcbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Bronopslagplaats"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/keuzethemas/pcbook/issues/new?title=Issue%20on%20page%20%2Fcyclus-1/cyclus1-voorbeelden.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open een probleem"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download deze pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/cyclus-1/cyclus1-voorbeelden.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download het bronbestand"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Afdrukken naar pdf"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Volledig scherm"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Zoeken" aria-label="Zoeken" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Voorbeelden</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Inhoud </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inleiding">Inleiding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-lichtregulering">Voorbeeld: lichtregulering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uitwerking-opdracht-a">Uitwerking opdracht (a)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uitwerking-opdracht-b">Uitwerking opdracht (b)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-tamagotchi">Voorbeeld: Tamagotchi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-valdetectie">Voorbeeld: valdetectie</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="voorbeelden">
+<h1>Voorbeelden<a class="headerlink" href="#voorbeelden" title="Permalink naar deze titel">#</a></h1>
+<section id="inleiding">
+<h2>Inleiding<a class="headerlink" href="#inleiding" title="Permalink naar deze titel">#</a></h2>
+<p>In dit deel vind je enkele voorbeelden, deels uitgewerkt, en deels zijn het opdrachten. Deze helpen om toestandsdiagrammen te begrijpen en te oefenen met het maken van toestandsdiagrammen. Kies zelf welke je interessant vindt.</p>
+</section>
+<section id="voorbeeld-lichtregulering">
+<span id="lichtregulering"></span><h2>Voorbeeld: lichtregulering<a class="headerlink" href="#voorbeeld-lichtregulering" title="Permalink naar deze titel">#</a></h2>
+<p>In dit voorbeeld gaat het om een systeem waarmee je de intensiteit van een lamp kunt reguleren. Het systeem bestaat uit een lamp en twee knoppen.</p>
+<p>De lamp kan in drie standen worden gezet:</p>
+<ul class="simple">
+<li><p>Uit (geen licht)</p></li>
+<li><p>Half aan (zacht licht)</p></li>
+<li><p>Helemaal aan (fel licht)</p></li>
+</ul>
+<p>Het systeem heeft twee knoppen zonder toggle-functie (A en B). Met knop A gaat de lamp feller branden. Bijvoorbeeld: als de lamp half aan is en knop A wordt ingedrukt, dan gaat de lamp helemaal aan. Met knop B gaat de lamp minder fel branden. De lamp is altijd in één van de drie bovengenoemde standen.</p>
+<div class="exercise admonition" id="cyclus-1/cyclus1-voorbeelden-exercise-0">
+
+<p class="admonition-title"><span class="caption-number">Opdracht 11 </span> (Maak toestandsdiagram lichtregulering)</p>
+<section id="exercise-content">
+<p>(a) Maak een toestandsdiagram voor dit systeem. In de volgende paragraaf wordt dit uitgewerkt, probeer het echter eerst zelf.</p>
+<p>(b) Het systeem wordt verder uitgebreid. De lamp heeft twee kleuren (rood en blauw). Er wordt een derde knop (C) toegevoegd waarmee kan worden gewisseld tussen de kleur rood en de kleur blauw. Pas het toestandsdiagram hierop aan.</p>
+</section>
+</div>
+</section>
+<section id="uitwerking-opdracht-a">
+<h2>Uitwerking opdracht (a)<a class="headerlink" href="#uitwerking-opdracht-a" title="Permalink naar deze titel">#</a></h2>
+<p>Hieronder volgt een mogelijke uitwerking van opdracht (a) over de lichtregulering.</p>
+<p>Het begint met het proberen te bepalen welke toestanden er zijn. In de opdrachtomschrijving staat dat de lamp in drie standen kan staan. Het ligt voor de hand dat we die gebruiken voor de toestanden:</p>
+<ul class="simple">
+<li><p>Lamp is uit</p></li>
+<li><p>Lamp is half aan</p></li>
+<li><p>Lamp is helemaal aan</p></li>
+</ul>
+<p>Die toestanden kunnen we vast tekenen, als drie bollen</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/toestandsdiagram-1-stap1.png"><img alt="../_images/toestandsdiagram-1-stap1.png" src="../_images/toestandsdiagram-1-stap1.png" style="width: 600px;" /></a>
+</figure>
+<p>Belangrijk om te weten is welke gebeurtenissen (events) er zijn, op basis daarvan kun je de toestandsovergangen bepalen. Als je de tekst van de opdracht leest blijkt dat er twee knoppen zijn. Dat zijn de gebeurtenissen, er zijn er dus twee:</p>
+<ul class="simple">
+<li><p>knop A wordt ingedrukt (en weer losgelaten)</p></li>
+<li><p>knop B wordt ingedrukt (en weer losgelaten)</p></li>
+</ul>
+<p>Voor elke toestand (dat zijn er drie) en elke gebeurtenis (dat zijn er twee) kunnen we bepalen wat de toestandsovergang wordt (3 x 2 = 6). Elke toestandsovergang teken je als een pijl. Dan krijg je zoiets als hieronder.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/toestandsdiagram-1-stap2.png"><img alt="../_images/toestandsdiagram-1-stap2.png" src="../_images/toestandsdiagram-1-stap2.png" style="width: 600px;" /></a>
+</figure>
+<p>A betekent: knop A wordt ingedrukt, B betekent: knop B wordt ingedrukt.</p>
+<p>Nu moeten de (uitvoer)acties er nog bij. Bijvoorbeeld, wat moet er gebeuren als de lamp in toestand 2 is en op knop B wordt gedrukt? Dan moet de lamp uit gaan. Een actie zet je altijd bij een toestands<em>overgang</em> (dus niet bij een toestand). Je krijgt dan dit:</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/toestandsdiagram-1-stap3.png"><img alt="../_images/toestandsdiagram-1-stap3.png" src="../_images/toestandsdiagram-1-stap3.png" style="width: 600px;" /></a>
+</figure>
+<p>Je ziet, niet bij iedere toestandsovergang hoeft een actie te staan.</p>
+<p>We zijn nog niet helemaal klaar, begintoestand moet er bij. Dat is de initiele toestand waar het systeem in begint. Het lijkt logisch dat de lamp eerst uit is, we kiezen daarom toestand 1 als begintoestand. En om het toestandsdiagram overzichtelijk te houden, laten we de toestandsovergangen die naar zichzelf verwijzen en geen actie hebben weg. Dan krijg je dit.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/toestandsdiagram-1-stap4.png"><img alt="../_images/toestandsdiagram-1-stap4.png" src="../_images/toestandsdiagram-1-stap4.png" style="width: 600px;" /></a>
+</figure>
+<p>We houden de teksten kort in het diagram om het overzichtelijk te houden. Het nadeel is dat misschien niet helemaal helder is wat er wordt bedoeld. Bijvoorbeeld, de pijl van toestand 1 naar toestand 2 waar bij staat A: lamp half aan zou beter kunnen zeggen:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(gebeurtenis) knop A wordt ingedrukt -&gt; (actie) zet de lamp met halve intensiteit aan.
+</pre></div>
+</div>
+<p>Je kunt het toestandsdiagram voor jezelf testen en daarmee controleren of het klopt. Bijvoorbeeld, wat gebeurt er is als ik op A, B en dan weer B druk? Klopt dit met wat het systeem zou moeten doen?</p>
+<p>Probeer nu eerst zelf opdracht 2) te doen voordat je de uitwerking bekijkt.</p>
+</section>
+<section id="uitwerking-opdracht-b">
+<h2>Uitwerking opdracht (b)<a class="headerlink" href="#uitwerking-opdracht-b" title="Permalink naar deze titel">#</a></h2>
+<p>Hieronder volgt een mogelijke uitwerking van opdracht b) over de lichtregulering.</p>
+<p>De eerste vraag die je jezelf moet stellen is: welke toestanden herken ik? De lamp kent nu naast de drie standen (uit, half aan, fel) ook nog de mogelijkheid voor twee kleuren (rood en blauw). Hoeveel toestanden zijn er dan? Het lijkt er op dat dat er zes zijn, namelijk 3 standen x 2 kleuren:</p>
+<ul class="simple">
+<li><p>Lamp is uit / rood</p></li>
+<li><p>Lamp is half aan / rood</p></li>
+<li><p>Lamp is helemaal aan / rood</p></li>
+<li><p>Lamp is uit / blauw</p></li>
+<li><p>Lamp is half aan / blauw</p></li>
+<li><p>Lamp is helemaal aan / blauw</p></li>
+</ul>
+<p>Laten we proberen het toestandsdiagram uit a) uit te breiden. We laten de acties nog even weg.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/toestandsdiagram-b-stap1.png"><img alt="../_images/toestandsdiagram-b-stap1.png" src="../_images/toestandsdiagram-b-stap1.png" style="width: 600px;" /></a>
+</figure>
+<p>Wat zijn de mogelijke gebeurtenissen? Er zijn nu drie knoppen, dus drie gebeurtenissen:</p>
+<ul class="simple">
+<li><p>knop A wordt ingedrukt</p></li>
+<li><p>knop B wordt ingedrukt</p></li>
+<li><p>knop C wordt ingedrukt</p></li>
+</ul>
+<p>Dat betekent dat er mogelijk 6 (toestanden) x 3 (gebeurtenissen) = 18 mogelijke toestandsovergangen zijn. Nu kun je gaan kijken wat die toestandsovergangen precies zijn en ze als een pijl gaan tekenen. Eerst maar eens kijken wat er moet gebeuren als knop C wordt ingedrukt voor ieder van de toestanden.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/toestandsdiagram-b-stap2.png"><img alt="../_images/toestandsdiagram-b-stap2.png" src="../_images/toestandsdiagram-b-stap2.png" style="width: 600px;" /></a>
+</figure>
+<p>Dan zijn we er nog niet, want we moeten ook duidelijk maken wat er gebeurt als knop A of B wordt ingedrukt als het systeem in toestand 4, 5 of 6 is.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/toestandsdiagram-b-stap3.png"><img alt="../_images/toestandsdiagram-b-stap3.png" src="../_images/toestandsdiagram-b-stap3.png" style="width: 600px;" /></a>
+</figure>
+<p>Vervolgens moeten de acties erbij, dat doen we hieronder, weliswaar in het kort, anders wordt het onoverzichtelijk.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/toestandsdiagram-b-stap4.png"><img alt="../_images/toestandsdiagram-b-stap4.png" src="../_images/toestandsdiagram-b-stap4.png" style="width: 600px;" /></a>
+</figure>
+<p>Het nadeel van korte teksten is dat het misschien niet helemaal helder is wat er moet gebeuren. Bijvoorbeeld, de pijl van toestand 2 naar toestand 5 waar bij staat C: blauw, zou beter kunnen zeggen:</p>
+<p>(gebeurtenis) knop C wordt ingedrukt : (actie) zet het rode licht uit en zet het blauw licht half aan</p>
+<p>Nog een voorbeeld: de pijl van toestand 1 naar toestand 2 waar bij staat A: 50% rood, zou beter kunnen zeggen:</p>
+<p>(gebeurtenis) knop A wordt ingedrukt : (actie) zet het rode licht half aan</p>
+<p>Een begintoestand hadden we al, dus dit zou het moeten zijn. Test je toestandsdiagram vervolgens voor jezelf. Wat gebeurt er bijvoorbeeld als je de knoppen C, dan A, dan C, dan A indrukt? En klopt dat met wat je verwacht dat het zou moeten doen?</p>
+<div class="shortanswer assessment admonition" id="assessment-1"><p class="admonition-title"><span class="caption-number">Vraag 13 </span><span> - Geen acties bij toestandsovergangen</span></p>
+<section id="question">
+<p>Aan de linkerkant van het toestandsdiagram staan twee toestandsovergangen zonder actie:</p>
+<ul class="simple">
+<li><p>van toestand 1 naar 4 (knop C wordt ingedrukt)</p></li>
+<li><p>van toestand 4 naar 1 (knop C wordt ingedrukt)</p></li>
+</ul>
+<p>Waarom staat hier geen actie bij?</p>
+</section>
+<textarea name="answer" rows="3" cols="40"></textarea><br><button class="sacheckbutton">Submit</button>
+</div>
+</section>
+<section id="voorbeeld-tamagotchi">
+<h2>Voorbeeld: Tamagotchi<a class="headerlink" href="#voorbeeld-tamagotchi" title="Permalink naar deze titel">#</a></h2>
+<p><em>Dit is gebaseerd op Micro:bit Challenge opdrachten en materiaal van Renske Weeda.</em></p>
+<p>Een virtueel huisdier is elektronisch apparaatje dat je kunt ‘opvoeden’. Kijk maar eens naar het artikel over Tamagotchi’s.</p>
+<p>(zie bijvoorbeeld: <a class="reference external" href="https://www.ad.nl/economie/huisdier-in-een-ei-de-tamagotchi-is-terug~a168289a/">https://www.ad.nl/economie/huisdier-in-een-ei-de-tamagotchi-is-terug~a168289a/</a>)</p>
+<p>Het doel is nu om zo’n virtueel huisdier te maken. Eerst maak je één of meerdere toestandsdiagrammen. Daarna kun je het ook zelf gaan implementeren, bijvoorbeeld met behulp van de Micro:bit.</p>
+<p>We beginnen met een eenvoudig variant.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/toestandsdiagram-tamagotchi-1.png"><img alt="../_images/toestandsdiagram-tamagotchi-1.png" src="../_images/toestandsdiagram-tamagotchi-1.png" style="width: 600px;" /></a>
+</figure>
+<p>Ons huisdier is in eerste instantie blij, dat is de begintoestand. Als hij wordt geknepen, wordt ie verdrietig. Als je ‘m daarna weer aait, wordt ie weer blij. Dit toestandsdiagram kent de volgende toestandsovergangen:</p>
+<ul class="simple">
+<li><p>Wordt geknepen</p></li>
+<li><p>Wordt geaaid</p></li>
+</ul>
+<div class="exercise admonition" id="cyclus-1/cyclus1-voorbeelden-exercise-2">
+
+<p class="admonition-title"><span class="caption-number">Opdracht 12 </span> (Tamagotchi)</p>
+<section id="exercise-content">
+<p>(a) We gaan de tamagotchi verder uitbreiden. Het virutele huisdier kan boos worden als je hem duwt. Als je ‘m dan weer aait wordt ie weer blij. Of als je ‘m knijpt wordt ie verdrietig. We hebben vast een start gemaakt met het toestandsdiagram. Vul de juiste woorden in op de stippellijnen. Er ontbreken ook nog twee toestandsovergangen (twee pijlen dus), voeg die toe.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/toestandsdiagram-tamagotchi-2.png"><img alt="../_images/toestandsdiagram-tamagotchi-2.png" src="../_images/toestandsdiagram-tamagotchi-2.png" style="width: 600px;" /></a>
+</figure>
+<p>(b) Maak een geheel nieuw toestandsdiagram voor het volgende virtuele huisdier. Standaard is het huisdier blij. Door te duwen wordt hij boos, door de aaien wordt hij blij. Als het donker is gaat hij slapen. Als het licht is wordt hij (blij) wakker. Als hij slaapt heeft duwen en aaien geen effect.</p>
+<p>(c) Pas het vorige huisdier aan: het huisdier wordt wakker in dezelfde toestand als hij ging slapen. Dus als hij boos was en ging slapen omdat het donker werd, wordt hij ook weer boos wakker.</p>
+</section>
+</div>
+</section>
+<section id="voorbeeld-valdetectie">
+<span id="id1"></span><h2>Voorbeeld: valdetectie<a class="headerlink" href="#voorbeeld-valdetectie" title="Permalink naar deze titel">#</a></h2>
+<p>Helaas komt het wel eens voor. Een oudere man of vrouw, alleen thuis, valt van de trap, breekt iets en kan niet meer opstaan of bewegen. De man of vrouw moet blijven liggen en hopen dat er iemand langskomt om te helpen.</p>
+<p>Het doel is om een horloge te ontwikkelen dat kan detecteren of iemand valt. Als degene die het horloge draagt valt, wordt dat geregistreerd met behulp van een versnellingssensor (zie ook cyclus 4 van deze module). Vervolgens kan het horloge een bericht versturen naar iemand die in de buurt woon, misschien een zoon of dochter. De houder van het horloge kan ook op de reset-knop drukken om te laten weten dat alles ok is.</p>
+<p>De gebeurtenissen zijn:</p>
+<ul class="simple">
+<li><p>gevallen</p></li>
+<li><p>reset-knop ingedrukt</p></li>
+</ul>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/toestandsdiagram-valdetectie-11.png"><img alt="../_images/toestandsdiagram-valdetectie-11.png" src="../_images/toestandsdiagram-valdetectie-11.png" style="width: 600px;" /></a>
+</figure>
+<ul class="simple">
+<li><p>Toestand 1 betekent: niks aan de hand</p></li>
+<li><p>Toestand 2 betekent: persoon is gevallen</p></li>
+</ul>
+<p>Voor de ontvanger van het signaal kun je ook een toestandsdiagram maken. Dit kan bijvoorbeeld op een mobiele telefoon of op een horloge. De gebeurtenissen daar zijn:</p>
+<ul class="simple">
+<li><p>signaal “gevallen” ontvangen</p></li>
+<li><p>signaal “ok” ontvangen</p></li>
+<li><p>reset-knop ingedrukt</p></li>
+</ul>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/toestandsdiagram-valdetectie-2.png"><img alt="../_images/toestandsdiagram-valdetectie-2.png" src="../_images/toestandsdiagram-valdetectie-2.png" style="width: 600px;" /></a>
+</figure>
+<ul class="simple">
+<li><p>Toestand 1 betekent: geen alarm</p></li>
+<li><p>Toestand 2 betekent: alarm aan</p></li>
+</ul>
+<p>In het deel over de Micro:bit laten we zien hoe je hiervoor een prototype kunt maken met behulp van radiosignalen.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./cyclus-1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ontwerpen-toestanden.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">vorige</p>
+        <p class="prev-next-title">Ontwerpen met behulp van toestandsdiagrammen</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="correcte-diagrammen.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">volgende</p>
+        <p class="prev-next-title">Correcte toestandsdiagrammen</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Inhoud
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inleiding">Inleiding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-lichtregulering">Voorbeeld: lichtregulering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uitwerking-opdracht-a">Uitwerking opdracht (a)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uitwerking-opdracht-b">Uitwerking opdracht (b)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-tamagotchi">Voorbeeld: Tamagotchi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-valdetectie">Voorbeeld: valdetectie</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Door Themateam Physical Computing
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
